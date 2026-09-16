@@ -148,11 +148,11 @@ export default function TokenDetailPage() {
                     {copied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
                   </button>
                   <a
-                    href={`https://scan.bohr.life/address/${token.address}`}
+                    href={`https://scan.botchain.ai/address/${token.address}`}
                     target="_blank"
                     rel="noreferrer"
                     className="p-1 hover:text-emerald-400 transition-colors"
-                    title="View on BohrScan"
+                    title="View on BOTScan"
                   >
                     <ExternalLink className="w-3 h-3" />
                   </a>

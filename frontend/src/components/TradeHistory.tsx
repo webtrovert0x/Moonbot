@@ -72,10 +72,10 @@ export function TradeHistory({ trades = [], symbol }: TradeHistoryProps) {
                   <a
                     href={
                       t.userAddress
-                        ? `https://scan.bohr.life/address/${t.userAddress}`
+                        ? `https://scan.botchain.ai/address/${t.userAddress}`
                         : t.user.startsWith('0x') && t.user.length === 42
-                        ? `https://scan.bohr.life/address/${t.user}`
-                        : `https://scan.bohr.life/tx/${t.txHash}`
+                        ? `https://scan.botchain.ai/address/${t.user}`
+                        : `https://scan.botchain.ai/tx/${t.txHash}`
                     }
                     target="_blank"
                     rel="noreferrer"
@@ -89,11 +89,11 @@ export function TradeHistory({ trades = [], symbol }: TradeHistoryProps) {
                     <span className="text-[11px]">{timeAgo(t.timestamp)}</span>
                     {t.txHash && (
                       <a
-                        href={`https://scan.bohr.life/tx/${t.txHash}`}
+                        href={`https://scan.botchain.ai/tx/${t.txHash}`}
                         target="_blank"
                         rel="noreferrer"
                         className="text-gray-500 hover:text-emerald-400 transition-colors inline-flex items-center p-0.5 rounded hover:bg-[#202538]"
-                        title="View transaction on BohrScan"
+                        title="View transaction on BOTScan"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
                       </a>

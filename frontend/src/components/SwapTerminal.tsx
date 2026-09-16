@@ -31,7 +31,7 @@ export function SwapTerminal({ token }: SwapTerminalProps) {
   const [successTxHash, setSuccessTxHash] = useState('');
 
   const publicClient = createPublicClient({
-    transport: http(process.env.NEXT_PUBLIC_RPC_URL || 'https://rpc.bohr.life'),
+    transport: http(process.env.NEXT_PUBLIC_RPC_URL || 'https://rpc.botchain.ai'),
   });
 
   // Refresh user's token balance
@@ -342,12 +342,12 @@ export function SwapTerminal({ token }: SwapTerminalProps) {
             <span>Transaction confirmed on BOT Chain!</span>
           </div>
           <a
-            href={`https://scan.bohr.life/tx/${successTxHash}`}
+            href={`https://scan.botchain.ai/tx/${successTxHash}`}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center space-x-1 text-emerald-300 underline font-mono text-[11px] hover:text-white"
           >
-            <span>View on BohrScan ({successTxHash.slice(0, 10)}...)</span>
+            <span>View on BOTScan ({successTxHash.slice(0, 10)}...)</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         </div>

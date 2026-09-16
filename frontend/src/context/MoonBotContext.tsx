@@ -109,11 +109,11 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
 
   const { writeContractAsync } = useWriteContract();
 
-  // Create public client for BOT Chain Testnet reading with configured timeout
+  // Create public client for BOT Chain reading with configured timeout
   const publicClient = useMemo(
     () =>
       createPublicClient({
-        transport: http(process.env.NEXT_PUBLIC_RPC_URL || 'https://rpc.bohr.life', {
+        transport: http(process.env.NEXT_PUBLIC_RPC_URL || 'https://rpc.botchain.ai', {
           timeout: 8_000,
           retryCount: 1,
         }),

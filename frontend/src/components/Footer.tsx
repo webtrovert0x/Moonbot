@@ -43,12 +43,12 @@ export function Footer() {
               {copiedContract ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3 text-gray-400" />}
             </button>
             <a
-              href={`https://scan.bohr.life/address/${MOONBOT_LAUNCHPAD_ADDRESS}`}
+              href={`https://scan.botchain.ai/address/${MOONBOT_LAUNCHPAD_ADDRESS}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-1 text-cyan-400 hover:text-cyan-300 transition-colors"
             >
-              <span>BohrScan</span>
+              <span>BOTScan</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>
@@ -125,11 +125,11 @@ export function Footer() {
             <ul className="space-y-2 text-xs font-mono text-gray-400">
               <li className="flex items-center justify-between border-b border-[#1b2032] pb-1.5">
                 <span className="text-gray-500">Network:</span>
-                <span className="text-gray-200">BOT Chain Testnet</span>
+                <span className="text-gray-200">BOT Chain Mainnet</span>
               </li>
               <li className="flex items-center justify-between border-b border-[#1b2032] pb-1.5">
                 <span className="text-gray-500">Chain ID:</span>
-                <span className="text-gray-200">968</span>
+                <span className="text-gray-200">677</span>
               </li>
               <li className="flex items-center justify-between border-b border-[#1b2032] pb-1.5">
                 <span className="text-gray-500">Currency:</span>
@@ -137,7 +137,7 @@ export function Footer() {
               </li>
               <li className="flex items-center justify-between">
                 <span className="text-gray-500">RPC Endpoint:</span>
-                <span className="text-emerald-400 text-[11px] truncate max-w-[140px]">rpc.bohr.life</span>
+                <span className="text-emerald-400 text-[11px] truncate max-w-[140px]">rpc.botchain.ai</span>
               </li>
             </ul>
           </div>
@@ -147,14 +147,14 @@ export function Footer() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-white font-mono">Ecosystem</h4>
             <div className="space-y-2 text-xs">
               <a
-                href="https://scan.bohr.life"
+                href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-between p-2 rounded-xl bg-[#141724] border border-[#24293e] hover:border-emerald-500/40 text-gray-300 hover:text-white transition-all group"
               >
                 <div className="flex items-center space-x-2">
                   <Globe className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>BohrScan Explorer</span>
+                  <span>BOTScan Explorer</span>
                 </div>
                 <ExternalLink className="w-3 h-3 text-gray-500 group-hover:text-emerald-400 transition-colors" />
               </a>

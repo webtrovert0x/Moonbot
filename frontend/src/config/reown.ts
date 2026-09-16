@@ -20,8 +20,8 @@ export const botChainMainnet = defineChain({
   },
   blockExplorers: {
     default: {
-      name: 'BohrScan',
-      url: 'https://scan.bohr.life',
+      name: 'BOTScan',
+      url: 'https://scan.botchain.ai',
     },
   },
 });
