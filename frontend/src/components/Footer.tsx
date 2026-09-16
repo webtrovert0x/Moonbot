@@ -24,10 +24,10 @@ export function Footer() {
           <div className="flex items-center space-x-3">
             <div className="flex items-center space-x-2 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 font-mono text-[11px]">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span>BOT Chain Testnet Live</span>
+              <span>BOT Chain Mainnet Live</span>
             </div>
             <span className="text-gray-500 hidden sm:inline">•</span>
-            <span className="font-mono text-[11px] text-gray-400">Chain ID: 968</span>
+            <span className="font-mono text-[11px] text-gray-400">Chain ID: 677</span>
             <span className="text-gray-500 hidden sm:inline">•</span>
             <span className="font-mono text-[11px] text-gray-400">Block Time: ~2s</span>
           </div>
@@ -45,11 +45,11 @@ export function Footer() {
             <a
               href={`https://scan.bohr.life/address/${MOONBOT_LAUNCHPAD_ADDRESS}`}
               target="_blank"
-              rel="noreferrer"
-              className="text-gray-400 hover:text-emerald-400 transition-colors p-1"
-              title="View on BohrScan"
+              rel="noopener noreferrer"
+              className="inline-flex items-center space-x-1 text-cyan-400 hover:text-cyan-300 transition-colors"
             >
-              <ExternalLink className="w-3.5 h-3.5" />
+              <span>BohrScan</span>
+              <ExternalLink className="w-3 h-3" />
             </a>
           </div>
         </div>
@@ -74,20 +74,20 @@ export function Footer() {
                     MOON<span className="text-[#00f0a8]">BOT</span>
                   </span>
                   <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                    TESTNET
+                    MAINNET
                   </span>
                 </div>
                 <span className="text-[10px] text-gray-400 font-mono">Fair Launch Protocol</span>
               </div>
             </Link>
             <p className="text-xs text-gray-400 leading-relaxed">
-              The premier Pump.fun-style fair launchpad native to BOT Chain. Zero initial LP, instant bonding curves, and 100% fair distribution.
+              The premier fair launchpad and bonding curve AMM native to BOT Chain Mainnet. Zero initial LP, instant bonding curves, and 100% fair distribution.
             </p>
             <div className="pt-2 flex items-center space-x-3">
               <div className="w-7 h-7 rounded-lg bg-[#141724] border border-[#24293e] flex items-center justify-center text-xs font-bold text-emerald-400">
                 ⚡
               </div>
-              <span className="text-[11px] font-mono text-gray-400">Powered by BOT Chain Testnet</span>
+              <span className="text-[11px] font-mono text-gray-400">Powered by BOT Chain Mainnet</span>
             </div>
           </div>
 

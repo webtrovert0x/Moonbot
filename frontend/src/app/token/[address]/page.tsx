@@ -103,7 +103,7 @@ export default function TokenDetailPage() {
           <div className="flex items-center space-x-2 text-xs font-mono text-gray-400">
             <span>Network:</span>
             <span className="text-emerald-400 font-bold">
-              {chain?.name ? `${chain.name} (${chain.id})` : 'BOT Chain Testnet (968)'}
+              {chain?.name ? `${chain.name} (${chain.id})` : 'BOT Chain Mainnet (677)'}
             </span>
           </div>
         </div>

@@ -2,7 +2,31 @@ import { createAppKit } from '@reown/appkit/react';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import { defineChain, type AppKitNetwork } from '@reown/appkit/networks';
 
-// BOT Chain Testnet definition ONLY
+// BOT Chain Mainnet definition
+export const botChainMainnet = defineChain({
+  id: 677,
+  name: 'BOT Chain Mainnet',
+  chainNamespace: 'eip155',
+  caipNetworkId: 'eip155:677',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'BOT',
+    symbol: 'BOT',
+  },
+  rpcUrls: {
+    default: {
+      http: [process.env.NEXT_PUBLIC_RPC_URL || 'https://rpc.botchain.ai'],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: 'BohrScan',
+      url: 'https://scan.bohr.life',
+    },
+  },
+});
+
+// BOT Chain Testnet definition
 export const botChainTestnet = defineChain({
   id: 968,
   name: 'BOT Chain Testnet',
@@ -26,7 +50,7 @@ export const botChainTestnet = defineChain({
   },
 });
 
-export const networks = [botChainTestnet] as unknown as [AppKitNetwork, ...AppKitNetwork[]];
+export const networks = [botChainMainnet, botChainTestnet] as unknown as [AppKitNetwork, ...AppKitNetwork[]];
 
 // Reown Project ID
 export const projectId =
@@ -44,17 +68,17 @@ export const config = wagmiAdapter.wagmiConfig;
 // Metadata for Reown Modal
 export const metadata = {
   name: 'MoonBot',
-  description: 'Fair Launchpad & Meme Coin Terminal on BOT Chain Testnet',
+  description: 'Fair Launchpad & Meme Coin Terminal on BOT Chain Mainnet',
   url: 'https://moonbot.ai',
   icons: ['https://avatars.githubusercontent.com/u/179229932'],
 };
 
-// Initialize AppKit with BOT Chain Testnet
+// Initialize AppKit with BOT Chain Mainnet
 export const modal = createAppKit({
   adapters: [wagmiAdapter],
   projectId,
   networks,
-  defaultNetwork: botChainTestnet,
+  defaultNetwork: botChainMainnet,
   metadata,
   themeMode: 'dark',
   themeVariables: {

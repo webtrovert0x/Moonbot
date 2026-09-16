@@ -106,9 +106,10 @@ contract MoonBotLaunchpad is ReentrancyGuard, Ownable {
         uint256 timestamp
     );
 
-    constructor() Ownable(msg.sender) {
+    constructor(address _tokenImplementation) Ownable(msg.sender) {
+        require(_tokenImplementation != address(0), "Invalid token impl");
         feeRecipient = msg.sender;
-        tokenImplementation = address(new MoonBotToken());
+        tokenImplementation = _tokenImplementation;
     }
 
     function setFeeRecipient(address newRecipient) external onlyOwner {

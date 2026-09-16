@@ -38,7 +38,7 @@ export function Navbar({ onOpenLaunchModal }: NavbarProps) {
                     MOON<span className="text-[#00f0a8]">BOT</span>
                   </span>
                   <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                    TESTNET
+                    MAINNET
                   </span>
                 </div>
                 <span className="text-[10px] text-gray-400 font-mono">Fair Launchpad</span>
@@ -48,7 +48,7 @@ export function Navbar({ onOpenLaunchModal }: NavbarProps) {
             {/* Network indicator */}
             <div className="hidden md:flex items-center space-x-2 px-3 py-1 rounded-full bg-[#141724] border border-[#24293e] text-xs text-gray-300">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="font-mono text-gray-200">BOT Chain Testnet (968)</span>
+              <span className="font-mono text-gray-200">BOT Chain Mainnet (677)</span>
             </div>
           </div>
 

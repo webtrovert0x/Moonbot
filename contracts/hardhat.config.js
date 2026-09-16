@@ -10,7 +10,7 @@ module.exports = {
     settings: {
       optimizer: {
         enabled: true,
-        runs: 200,
+        runs: 1,
       },
       viaIR: true,
     },
@@ -32,9 +32,18 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
+      botchain: "empty",
       botchainTestnet: "empty",
     },
     customChains: [
+      {
+        network: "botchain",
+        chainId: 677,
+        urls: {
+          apiURL: "https://scan.bohr.life/api",
+          browserURL: "https://scan.bohr.life",
+        },
+      },
       {
         network: "botchainTestnet",
         chainId: 968,

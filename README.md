@@ -1,7 +1,7 @@
 # 🌕 MoonBot — Fair Launchpad on BOT Chain
 
-[![BOT Chain Testnet](https://img.shields.io/badge/Network-BOT%20Chain%20Testnet%20(968)-00f0a8?style=for-the-badge)](https://scan.bohr.life)
-[![Smart Contract](https://img.shields.io/badge/Contract-0x5995...Cd993-3b82f6?style=for-the-badge)](https://scan.bohr.life/address/0x5995F44bB99BaBb4Fb44089012AC3A9def0Cd993)
+[![BOT Chain Mainnet](https://img.shields.io/badge/Network-BOT%20Chain%20Mainnet%20(677)-00f0a8?style=for-the-badge)](https://scan.bohr.life)
+[![Smart Contract](https://img.shields.io/badge/Contract-0xD953...48063-3b82f6?style=for-the-badge)](https://scan.bohr.life/address/0xD95368B45cca7C275B101DA4c54e67f0f5248063)
 [![License: MIT](https://img.shields.io/badge/License-MIT-amber?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
 **MoonBot** is a decentralized, high-speed fair launchpad and automated market maker (AMM) native to **BOT Chain**. Inspired by the Pump.fun model, MoonBot enables anyone to create and trade meme coins instantly with **zero initial liquidity**, transparent constant-product bonding curves, automatic DEX graduation, and real-time creator royalties.
@@ -21,8 +21,9 @@
 - **📈 Mathematical Bonding Curve ($x \cdot y = k$)**:
   - Automated price discovery governed by virtual reserves ($V_{BOT} \cdot V_{TOKEN} = K$).
   - Smooth continuous liquidity: buy and sell at any time directly against the smart contract.
-- **💰 Real-Time Creator Royalties**:
+- **💰 Real-Time Creator Royalties & Protocol Revenue**:
   - Coin creators earn a **0.50% royalty** on every buy and sell trade, paid directly into their wallet automatically on-chain.
+  - Platform owner receives **0.2 BOT coin creation fee** + **0.50% protocol trading fee** directly on-chain.
 - **🎓 100% Autonomous DEX Graduation**:
   - When the bonding curve hits 100% (800M tokens sold), the smart contract automatically pairs all accumulated BOT with 200M reserved tokens to seed permanent DEX liquidity.
 - **📊 Interactive Trading Terminal**:
@@ -37,14 +38,16 @@
 
 ## 🌐 Network Specifications
 
-| Parameter | Value |
-| :--- | :--- |
-| **Network Name** | BOT Chain Testnet |
-| **Chain ID** | `968` |
-| **Native Currency** | BOT (18 Decimals) |
-| **RPC Endpoint** | `https://rpc.bohr.life` |
-| **Block Explorer** | [https://scan.bohr.life](https://scan.bohr.life) |
-| **Launchpad Contract** | [`0x5995F44bB99BaBb4Fb44089012AC3A9def0Cd993`](https://scan.bohr.life/address/0x5995F44bB99BaBb4Fb44089012AC3A9def0Cd993) |
+| Parameter | Mainnet Value | Testnet Value |
+| :--- | :--- | :--- |
+| **Network Name** | **BOT Chain Mainnet** | BOT Chain Testnet |
+| **Chain ID** | **`677`** | `968` |
+| **Native Currency** | BOT (18 Decimals) | BOT (18 Decimals) |
+| **RPC Endpoint** | `https://rpc.botchain.ai` | `https://rpc.bohr.life` |
+| **Block Explorer** | [https://scan.bohr.life](https://scan.bohr.life) | [https://scan.bohr.life](https://scan.bohr.life) |
+| **Launchpad Factory** | [`0xD95368B45cca7C275B101DA4c54e67f0f5248063`](https://scan.bohr.life/address/0xD95368B45cca7C275B101DA4c54e67f0f5248063) | `0x5995F44bB99BaBb4Fb44089012AC3A9def0Cd993` |
+| **Master Token Template** | [`0x9050fFa3269a268bee3604CCb7B2020a9cE7CAbb`](https://scan.bohr.life/address/0x9050fFa3269a268bee3604CCb7B2020a9cE7CAbb) | `0x34aa2B06683C72AcB8e7803b4135Ee83B6970D56` |
+| **Fee Recipient Wallet** | `0x55DA37AbbF8C9141adA4Dd1C2eF7211c0483eC16` | `0x55DA37AbbF8C9141adA4Dd1C2eF7211c0483eC16` |
 
 ---
 
