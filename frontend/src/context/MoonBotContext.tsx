@@ -121,24 +121,19 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
     []
   );
 
-  // Load cached tokens from MongoDB and localStorage on boot
+  // Load cached tokens from MongoDB and localStorage on boot (purging legacy testnet caches)
   useEffect(() => {
     async function loadInitial() {
       try {
-        const cached = typeof window !== 'undefined' ? localStorage.getItem(`moonbot_cache_${MOONBOT_LAUNCHPAD_ADDRESS}`) : null;
-        if (cached) {
-          const parsed = JSON.parse(cached);
-          if (Array.isArray(parsed) && parsed.length > 0) {
-            const valid = parsed.map((t: any) => ({
-              ...t,
-              marketCapBot: Number(t.marketCapBot) || 0,
-              priceBot: Number(t.priceBot) || 0.000000028,
-              progressPercent: Number(t.progressPercent) || 0,
-              tokensSold: Number(t.tokensSold) || 0,
-              tokensForSale: Number(t.tokensForSale) || 800000000,
-              realBotReserve: Number(t.realBotReserve) || 0,
-            }));
-            setTokens(valid);
+        if (typeof window !== 'undefined') {
+          // Explicitly remove all legacy testnet cache keys
+          localStorage.removeItem('moonbot_tokens');
+          localStorage.removeItem('moonbot_cache_0x5995F44bB99BaBb4Fb44089012AC3A9def0Cd993');
+          for (let i = localStorage.length - 1; i >= 0; i--) {
+            const key = localStorage.key(i);
+            if (key && (key === 'moonbot_tokens' || (key.startsWith('moonbot_cache_') && key !== `moonbot_cache_${MOONBOT_LAUNCHPAD_ADDRESS}`))) {
+              localStorage.removeItem(key);
+            }
           }
         }
 
@@ -149,6 +144,9 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
             setTokens(data.tokens);
           } else {
             setTokens([]);
+            if (typeof window !== 'undefined') {
+              localStorage.removeItem(`moonbot_cache_${MOONBOT_LAUNCHPAD_ADDRESS}`);
+            }
           }
         }
       } catch (e) {

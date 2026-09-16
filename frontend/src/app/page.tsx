@@ -97,7 +97,7 @@ export default function HomePage() {
             <div className="space-y-4 text-center lg:text-left max-w-2xl">
               <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-bold tracking-wide">
                 <Sparkles className="w-3.5 h-3.5 animate-spin" />
-                <span>Fair Launch Protocol on BOT Chain Testnet</span>
+                <span>Fair Launch Protocol on BOT Chain Mainnet</span>
               </div>
 
               <h1 className="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">
