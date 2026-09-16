@@ -142,19 +142,13 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
           }
         }
 
-        const res = await fetch('/api/tokens');
+        const res = await fetch(`/api/tokens?launchpadAddress=${MOONBOT_LAUNCHPAD_ADDRESS}`);
         if (res.ok) {
           const data = await res.json();
           if (data.tokens && Array.isArray(data.tokens) && data.tokens.length > 0) {
-            setTokens((prev) => {
-              const merged = [...data.tokens];
-              for (const tok of prev) {
-                if (!merged.find((m: TokenItem) => m.address.toLowerCase() === tok.address.toLowerCase())) {
-                  merged.push(tok);
-                }
-              }
-              return merged;
-            });
+            setTokens(data.tokens);
+          } else {
+            setTokens([]);
           }
         }
       } catch (e) {
@@ -169,7 +163,7 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
     fetch('/api/tokens', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(token),
+      body: JSON.stringify({ ...token, launchpadAddress: MOONBOT_LAUNCHPAD_ADDRESS }),
     }).catch(() => {});
   };
 
@@ -390,19 +384,11 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
   const refreshOnChainTokens = useCallback(async () => {
     // 1. Sync from MongoDB first (instant)
     try {
-      const mongoRes = await fetch('/api/tokens');
+      const mongoRes = await fetch(`/api/tokens?launchpadAddress=${MOONBOT_LAUNCHPAD_ADDRESS}`);
       if (mongoRes.ok) {
         const mongoData = await mongoRes.json();
-        if (mongoData.tokens && Array.isArray(mongoData.tokens) && mongoData.tokens.length > 0) {
-          setTokens((prev) => {
-            const merged = [...mongoData.tokens];
-            for (const tok of prev) {
-              if (!merged.find((m: TokenItem) => m.address.toLowerCase() === tok.address.toLowerCase())) {
-                merged.push(tok);
-              }
-            }
-            return merged;
-          });
+        if (mongoData.tokens && Array.isArray(mongoData.tokens)) {
+          setTokens(mongoData.tokens);
         }
       }
     } catch {}

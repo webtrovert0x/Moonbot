@@ -5,6 +5,11 @@ export async function GET(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const address = searchParams.get('address')?.toLowerCase();
+    const launchpadAddress = (
+      searchParams.get('launchpadAddress') ||
+      process.env.NEXT_PUBLIC_LAUNCHPAD_ADDRESS ||
+      ''
+    ).toLowerCase();
 
     const client = await clientPromise;
     const db = client.db();
@@ -18,8 +23,13 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ success: true, token });
     }
 
+    const query: any = {};
+    if (launchpadAddress) {
+      query.launchpadAddress = launchpadAddress;
+    }
+
     const tokens = await tokensCollection
-      .find({})
+      .find(query)
       .sort({ createdAt: -1 })
       .limit(200)
       .toArray();
@@ -71,8 +81,15 @@ export async function POST(req: NextRequest) {
     const db = client.db();
     const tokensCollection = db.collection('tokens');
 
+    const launchpadAddress = (
+      body.launchpadAddress ||
+      process.env.NEXT_PUBLIC_LAUNCHPAD_ADDRESS ||
+      ''
+    ).toLowerCase();
+
     const tokenDoc = {
       address: address.toLowerCase(),
+      launchpadAddress,
       name,
       symbol: symbol.toUpperCase(),
       description: description || '',
