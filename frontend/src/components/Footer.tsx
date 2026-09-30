@@ -178,7 +178,7 @@ export function Footer() {
         {/* Disclaimer & Copyright */}
         <div className="mt-12 pt-8 border-t border-[#1b2032] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500">
           <p className="max-w-2xl text-center sm:text-left">
-            <span className="font-semibold text-gray-400">Disclaimer:</span> MoonBot operates purely through autonomous smart contracts on BOT Chain Testnet. Meme coins are high-volatility experimental digital assets with zero guaranteed value. Trade responsibly.
+            <span className="font-semibold text-gray-400">Disclaimer:</span> MoonBot operates purely through autonomous smart contracts on BOT Chain Mainnet. Meme coins are high-volatility experimental digital assets with zero guaranteed value. Trade responsibly.
           </p>
           <div className="font-mono text-center sm:text-right shrink-0">
             © {new Date().getFullYear()} MOONBOT. All rights reserved.
