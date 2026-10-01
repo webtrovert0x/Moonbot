@@ -83,11 +83,11 @@ export function Footer() {
             <p className="text-xs text-gray-400 leading-relaxed">
               The premier fair launchpad and bonding curve AMM native to BOT Chain Mainnet. Zero initial LP, instant bonding curves, and 100% fair distribution.
             </p>
-            <div className="pt-2 flex items-center space-x-3">
-              <div className="w-7 h-7 rounded-lg bg-[#141724] border border-[#24293e] flex items-center justify-center text-xs font-bold text-emerald-400">
-                ⚡
+            <div className="pt-2 flex items-center space-x-2.5">
+              <div className="w-7 h-7 rounded-lg bg-[#141724] border border-[#24293e] flex items-center justify-center p-1">
+                <img src="/botchain.svg" alt="BOT Chain Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="text-[11px] font-mono text-gray-400">Powered by BOT Chain Mainnet</span>
+              <span className="text-[11px] font-mono text-gray-300 font-medium">Powered by BOT Chain Mainnet</span>
             </div>
           </div>
 
@@ -150,26 +150,26 @@ export function Footer() {
                 href="https://scan.botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between p-2 rounded-xl bg-[#141724] border border-[#24293e] hover:border-emerald-500/40 text-gray-300 hover:text-white transition-all group"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-[#141724] border border-[#24293e] hover:border-emerald-500/40 text-gray-300 hover:text-white transition-all group"
               >
-                <div className="flex items-center space-x-2">
-                  <Globe className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>BOTScan Explorer</span>
+                <div className="flex items-center space-x-2.5">
+                  <img src="/botchain.svg" alt="BOTScan" className="w-4 h-4 object-contain" />
+                  <span className="font-semibold text-gray-200">BOTScan Explorer</span>
                 </div>
-                <ExternalLink className="w-3 h-3 text-gray-500 group-hover:text-emerald-400 transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover:text-emerald-400 transition-colors" />
               </a>
 
               <a
                 href="https://botchain.ai"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center justify-between p-2 rounded-xl bg-[#141724] border border-[#24293e] hover:border-emerald-500/40 text-gray-300 hover:text-white transition-all group"
+                className="flex items-center justify-between p-2.5 rounded-xl bg-[#141724] border border-[#24293e] hover:border-emerald-500/40 text-gray-300 hover:text-white transition-all group"
               >
-                <div className="flex items-center space-x-2">
-                  <Code2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>BOT Chain Portal</span>
+                <div className="flex items-center space-x-2.5">
+                  <img src="/botchain.svg" alt="BOT Chain" className="w-4 h-4 object-contain" />
+                  <span className="font-semibold text-gray-200">BOT Chain Portal</span>
                 </div>
-                <ExternalLink className="w-3 h-3 text-gray-500 group-hover:text-emerald-400 transition-colors" />
+                <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover:text-emerald-400 transition-colors" />
               </a>
             </div>
           </div>
