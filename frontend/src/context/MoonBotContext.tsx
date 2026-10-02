@@ -163,12 +163,11 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
         if (res.ok) {
           const data = await res.json();
           if (data.tokens && Array.isArray(data.tokens) && data.tokens.length > 0) {
-            setTokens(data.tokens);
+            const hasGraduated = data.tokens.some((t: any) => t.address && t.address.toLowerCase() === FEATURED_GRADUATED_TOKEN.address.toLowerCase());
+            const finalTokens = hasGraduated ? data.tokens : [FEATURED_GRADUATED_TOKEN, ...data.tokens];
+            setTokens(finalTokens);
           } else {
-            setTokens([]);
-            if (typeof window !== 'undefined') {
-              localStorage.removeItem(`moonbot_cache_${MOONBOT_LAUNCHPAD_ADDRESS}`);
-            }
+            setTokens([FEATURED_GRADUATED_TOKEN]);
           }
         }
       } catch (e) {
@@ -497,12 +496,16 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
           .map((r) => r.value);
 
         if (validTokens.length > 0) {
-          setTokens(validTokens);
+          const hasGraduated = validTokens.some((t) => t.address && t.address.toLowerCase() === FEATURED_GRADUATED_TOKEN.address.toLowerCase());
+          const finalTokens = hasGraduated ? validTokens : [FEATURED_GRADUATED_TOKEN, ...validTokens];
+          setTokens(finalTokens);
           try {
             if (typeof window !== 'undefined') {
-              localStorage.setItem(`moonbot_cache_${MOONBOT_LAUNCHPAD_ADDRESS}`, JSON.stringify(validTokens));
+              localStorage.setItem(`moonbot_cache_${MOONBOT_LAUNCHPAD_ADDRESS}`, JSON.stringify(finalTokens));
             }
           } catch {}
+        } else {
+          setTokens([FEATURED_GRADUATED_TOKEN]);
         }
       }
     } catch {
