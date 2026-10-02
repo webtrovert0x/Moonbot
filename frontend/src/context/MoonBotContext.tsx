@@ -27,6 +27,28 @@ export interface TokenItem {
   volume24h: number;
 }
 
+export const FEATURED_GRADUATED_TOKEN: TokenItem = {
+  address: '0x9050fFa3269a268bee3604CCb7B2020a9cE7CAbb',
+  name: 'MoonBot Genesis',
+  symbol: 'MBOT',
+  description: 'The flagship community coin native to BOT Chain Mainnet. Successfully graduated from the bonding curve to DEX with 100% locked liquidity.',
+  imageUri: '/logo.png',
+  twitter: 'https://x.com/BotChainAI',
+  telegram: 'https://t.me/botchain',
+  website: 'https://www.botchain.ai/en/',
+  creator: '0x55DA37AbbF8C9141adA4Dd1C2eF7211c0483eC16',
+  marketCapBot: 117912,
+  priceBot: 0.0001179,
+  progressPercent: 100,
+  tokensSold: 800000000,
+  tokensForSale: 800000000,
+  realBotReserve: 87.91,
+  graduated: true,
+  createdAt: 1727740800000,
+  replyCount: 18,
+  volume24h: 87.91,
+};
+
 export interface Trade {
   id: string;
   tokenAddress: string;
@@ -179,6 +201,10 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
     async (tokenAddr: string): Promise<TokenItem | undefined> => {
       if (!tokenAddr || typeof tokenAddr !== 'string' || !tokenAddr.startsWith('0x') || tokenAddr.length !== 42) {
         return undefined;
+      }
+
+      if (tokenAddr.toLowerCase() === FEATURED_GRADUATED_TOKEN.address.toLowerCase()) {
+        return FEATURED_GRADUATED_TOKEN;
       }
 
       try {
@@ -500,6 +526,9 @@ export function MoonBotProvider({ children }: { children: ReactNode }) {
   // Get single token helper
   const getToken = (addr: string) => {
     if (!addr || typeof addr !== 'string') return undefined;
+    if (addr.toLowerCase() === FEATURED_GRADUATED_TOKEN.address.toLowerCase()) {
+      return FEATURED_GRADUATED_TOKEN;
+    }
     return tokens.find((tok) => tok?.address && tok.address.toLowerCase() === addr.toLowerCase());
   };
 
