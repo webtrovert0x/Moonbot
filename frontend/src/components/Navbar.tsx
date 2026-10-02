@@ -46,10 +46,37 @@ export function Navbar({ onOpenLaunchModal }: NavbarProps) {
             </Link>
 
             {/* Network indicator */}
-            <div className="hidden md:flex items-center space-x-2.5 px-3 py-1 rounded-full bg-[#141724] border border-[#24293e] text-xs text-gray-300">
+            <div className="hidden lg:flex items-center space-x-2.5 px-3 py-1 rounded-full bg-[#141724] border border-[#24293e] text-xs text-gray-300">
               <img src="/botchain.jpeg" alt="BOT Chain Logo" className="w-4 h-4 rounded-full object-cover border border-emerald-500/40" />
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="font-mono text-gray-200 font-semibold">BOT Chain Mainnet (677)</span>
+              <span className="font-mono text-gray-200 font-semibold">BOT Chain (677)</span>
+            </div>
+
+            {/* BOT Chain Portal & Explorer Links */}
+            <div className="hidden md:flex items-center space-x-2">
+              <a
+                href="https://www.botchain.ai/en/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-xl text-xs font-medium text-gray-300 hover:text-white bg-[#141724]/80 hover:bg-[#1b2032] border border-[#24293e] hover:border-emerald-500/40 transition-all"
+                title="BOT Chain Official Website"
+              >
+                <img src="/botchain.jpeg" alt="BOT Chain" className="w-3.5 h-3.5 rounded-full object-cover" />
+                <span>BOT Chain</span>
+                <ExternalLink className="w-3 h-3 text-gray-400" />
+              </a>
+
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-1.5 px-2.5 py-1.5 rounded-xl text-xs font-medium text-gray-300 hover:text-white bg-[#141724]/80 hover:bg-[#1b2032] border border-[#24293e] hover:border-cyan-500/40 transition-all"
+                title="BOTScan Block Explorer"
+              >
+                <span className="text-cyan-400 font-bold text-[11px]">🔍</span>
+                <span>Explorer</span>
+                <ExternalLink className="w-3 h-3 text-gray-400" />
+              </a>
             </div>
           </div>
 
