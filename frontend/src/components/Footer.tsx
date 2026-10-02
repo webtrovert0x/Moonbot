@@ -84,8 +84,8 @@ export function Footer() {
               The premier fair launchpad and bonding curve AMM native to BOT Chain Mainnet. Zero initial LP, instant bonding curves, and 100% fair distribution.
             </p>
             <div className="pt-2 flex items-center space-x-2.5">
-              <div className="w-7 h-7 rounded-lg bg-[#141724] border border-[#24293e] flex items-center justify-center p-1">
-                <img src="/botchain.svg" alt="BOT Chain Logo" className="w-full h-full object-contain" />
+              <div className="w-7 h-7 rounded-lg bg-[#141724] border border-[#24293e] flex items-center justify-center p-0.5 overflow-hidden">
+                <img src="/botchain.jpeg" alt="BOT Chain Logo" className="w-full h-full object-cover rounded-md" />
               </div>
               <span className="text-[11px] font-mono text-gray-300 font-medium">Powered by BOT Chain Mainnet</span>
             </div>
@@ -153,20 +153,20 @@ export function Footer() {
                 className="flex items-center justify-between p-2.5 rounded-xl bg-[#141724] border border-[#24293e] hover:border-emerald-500/40 text-gray-300 hover:text-white transition-all group"
               >
                 <div className="flex items-center space-x-2.5">
-                  <img src="/botchain.svg" alt="BOTScan" className="w-4 h-4 object-contain" />
+                  <img src="/botchain.jpeg" alt="BOTScan" className="w-5 h-5 rounded-full object-cover border border-cyan-500/30" />
                   <span className="font-semibold text-gray-200">BOTScan Explorer</span>
                 </div>
                 <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover:text-emerald-400 transition-colors" />
               </a>
 
               <a
-                href="https://botchain.ai"
+                href="https://www.botchain.ai/en/"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center justify-between p-2.5 rounded-xl bg-[#141724] border border-[#24293e] hover:border-emerald-500/40 text-gray-300 hover:text-white transition-all group"
               >
                 <div className="flex items-center space-x-2.5">
-                  <img src="/botchain.svg" alt="BOT Chain" className="w-4 h-4 object-contain" />
+                  <img src="/botchain.jpeg" alt="BOT Chain" className="w-5 h-5 rounded-full object-cover border border-emerald-500/30" />
                   <span className="font-semibold text-gray-200">BOT Chain Portal</span>
                 </div>
                 <ExternalLink className="w-3.5 h-3.5 text-gray-500 group-hover:text-emerald-400 transition-colors" />

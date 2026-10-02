@@ -47,7 +47,7 @@ export function Navbar({ onOpenLaunchModal }: NavbarProps) {
 
             {/* Network indicator */}
             <div className="hidden md:flex items-center space-x-2.5 px-3 py-1 rounded-full bg-[#141724] border border-[#24293e] text-xs text-gray-300">
-              <img src="/botchain.svg" alt="BOT Chain Logo" className="w-4 h-4 object-contain" />
+              <img src="/botchain.jpeg" alt="BOT Chain Logo" className="w-4 h-4 rounded-full object-cover border border-emerald-500/40" />
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
               <span className="font-mono text-gray-200 font-semibold">BOT Chain Mainnet (677)</span>
             </div>
